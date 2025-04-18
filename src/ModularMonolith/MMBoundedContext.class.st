@@ -3,7 +3,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'contextName',
-		'processes'
+		'processes',
+		'processDefinitions'
 	],
 	#category : #'ModularMonolith-Kernel'
 }
@@ -22,10 +23,16 @@ MMBoundedContext >> contextName: aString [
 
 { #category : #'as yet unclassified' }
 MMBoundedContext >> initialize [
-	processes := Dictionary new
+	processes := Dictionary new.
+	processDefinitions := Dictionary new.
 ]
 
 { #category : #accessing }
 MMBoundedContext >> process: aString [ 
 	^ processes at: aString ifAbsentPut: [MMProcess named: aString in: self.].
+]
+
+{ #category : #'as yet unclassified' }
+MMBoundedContext >> processDefinitionFor: aProcess [
+	^processDefinitions at: aProcess processName ifAbsentPut: [MMProcessDefinition named: aProcess processName in: self.].
 ]

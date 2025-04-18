@@ -171,7 +171,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-12T16:34:25.247735+02:00"
+						"dateAndTimeString" : "2025-04-18T10:23:46.817833+02:00"
 					}
 				},
 				"uid" : {
@@ -181,7 +181,41 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "A process starts in an initial state, and then uses state transitions to move from that state to further ones, until it reaches a final state. the process definition stores how the transitions happen."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-18T10:23:53.63087+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-18T12:16:30.840232+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YtXK+WrvDQCYT/r6B5yk+A=="
+				},
+				"code" : "procDef := newOrganization processDefinition"
 			}
 		]
 	},

@@ -113,6 +113,40 @@
 				"string" : "In that bounded context processes are defined that can be executed"
 			},
 			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-12T16:34:42.544842+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-12T16:34:43.707063+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "OBLidPfuDQCMuRT1B+fShg=="
+				},
+				"code" : "newOrganization := bc process: 'New Party'."
+			},
+			{
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
@@ -126,7 +160,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-12T16:33:45.34168+02:00"
+						"dateAndTimeString" : "2025-04-12T16:34:25.247735+02:00"
 					}
 				},
 				"editEmail" : {
@@ -137,17 +171,51 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-12T16:34:14.908955+02:00"
+						"dateAndTimeString" : "2025-04-18T10:23:46.817833+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "EDl5cffuDQCLkns6B+fShg=="
+					"uidString" : "diTac/fuDQCMqk0DB+fShg=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "newOrganization := bc process"
+				"string" : "A process starts in an initial state, and then uses state transitions to move from that state to further ones, until it reaches a final state. the process definition stores how the transitions happen."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-18T10:23:53.63087+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-18T10:25:08.391373+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YtXK+WrvDQCYT/r6B5yk+A=="
+				},
+				"code" : "procDef := newOrganisation processDefinition"
 			}
 		]
 	},

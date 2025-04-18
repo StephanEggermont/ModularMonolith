@@ -26,6 +26,11 @@ MMProcess >> context: anObject [
 	context := anObject
 ]
 
+{ #category : #'as yet unclassified' }
+MMProcess >> processDefinition [
+	^self context processDefinitionFor: self
+]
+
 { #category : #accessing }
 MMProcess >> processName [
 	^ processName
