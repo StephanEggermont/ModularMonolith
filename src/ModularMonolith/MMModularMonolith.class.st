@@ -75,7 +75,7 @@ MMModularMonolith >> kernelModel [
 { #category : #'as yet unclassified' }
 MMModularMonolith >> magritteModel [
 	<gtExample>
-	^self packageViewIncluding: MABasicObject
+	^self packageViewIncluding: MABasicObject prefix: 'MA'
 ]
 
 { #category : #'as yet unclassified' }
@@ -91,6 +91,33 @@ MMModularMonolith >> packageViewIncluding: aClass [
 		forEach: [:tag | view nodes 
 			shape: [ :cl | GtMondrianUMLClassElement withDefaultContainer 
 				label: (cl) asString;
+				labelAttributes: {BlTextForegroundAttribute paint:(self colorForClass: cl)} ];
+			with: (tag classes sorted: [:a :b | a name < b name]);
+				forEach: [:cla | view nodes 
+					shape: [ :me | BlElement new 
+						background: (self colorForMethod: me);
+						border: (BlBorder paint: Color gray);
+						size: (5 max: 2* me linesOfCode) @ (5 max: 2* me numLiterals);
+						yourself  ];
+			with: ((cla methods) sorted: [ :a :b | a selector < b selector ]).
+			view layout rectanglePack  ]] in: #default.
+	view layout rectanglePack.
+	^ view
+]
+
+{ #category : #'as yet unclassified' }
+MMModularMonolith >> packageViewIncluding: aClass prefix: aPrefix [
+	| view tags|
+	view := GtMondrian new.
+	tags := (RPackageOrganizer default globalPackageOf: aClass) classTags 
+		removeAllSuchThat: [ :e | e name = 'Manifest'].
+	view nodes 
+		shape: [ :each | GtMondrianUMLClassElement withDefaultContainer 
+			label: (each name) asString ];
+		with: tags;
+		forEach: [:tag | view nodes 
+			shape: [ :cl | GtMondrianUMLClassElement withDefaultContainer 
+				label: ((cl) asString withoutPrefix: aPrefix);
 				labelAttributes: {BlTextForegroundAttribute paint:(self colorForClass: cl)} ];
 			with: (tag classes sorted: [:a :b | a name < b name]);
 				forEach: [:cla | view nodes 
