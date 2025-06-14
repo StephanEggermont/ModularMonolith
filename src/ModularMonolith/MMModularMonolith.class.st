@@ -8,6 +8,12 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+MMModularMonolith >> classParserModel [
+	<gtExample>
+	^self packageViewIncluding: CDClassDefinitionParser
+]
+
+{ #category : #'as yet unclassified' }
 MMModularMonolith >> colorForClass: aClass [
 	(aClass methods anySatisfy: [:m | m isAbstract]) ifTrue: [^Color blue].
 	(aClass superclass = TestCase ) ifTrue: [ ^Color orange ].
@@ -22,6 +28,9 @@ MMModularMonolith >> colorForMethod: aCompiledMethod [
 	(aCompiledMethod referencedClasses includes: GtMondrian) ifTrue: [ ^Color cyan ].
 	aCompiledMethod isGTExampleMethod ifTrue: [ ^Color lightOrange  ].
 	(self isAccessor: aCompiledMethod) ifTrue: [ ^Color blue ].
+	(aCompiledMethod hasPragmaNamed: #gtView) ifTrue: [^Color lightGreen].
+	(aCompiledMethod hasPragmaNamed: #magritteDescription) ifTrue: [^Color lightBlue].
+	(aCompiledMethod hasPragmaNamed: #gtExample) ifTrue: [^Color brown].
 	^Color green
 ]
 
@@ -64,6 +73,12 @@ MMModularMonolith >> kernelModel [
 ]
 
 { #category : #'as yet unclassified' }
+MMModularMonolith >> magritteModel [
+	<gtExample>
+	^self packageViewIncluding: MABasicObject
+]
+
+{ #category : #'as yet unclassified' }
 MMModularMonolith >> packageViewIncluding: aClass [
 	| view tags|
 	view := GtMondrian new.
@@ -84,7 +99,8 @@ MMModularMonolith >> packageViewIncluding: aClass [
 						border: (BlBorder paint: Color gray);
 						size: (5 max: 2* me linesOfCode) @ (5 max: 2* me numLiterals);
 						yourself  ];
-			with: ((cla methods) sorted: [ :a :b | a selector < b selector ]) ]] in: #default.
-	view layout grid.
+			with: ((cla methods) sorted: [ :a :b | a selector < b selector ]).
+			view layout rectanglePack  ]] in: #default.
+	view layout rectanglePack.
 	^ view
 ]
